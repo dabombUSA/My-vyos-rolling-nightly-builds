@@ -99,7 +99,6 @@ jobs:
           echo "${{ secrets.minisign_public_key }}" > /tmp/minisign.pub
           echo "${{ secrets.minisign_private_key }}" > /tmp/minisign.key
           echo "${{ secrets.minisign_password }}" > /tmp/minisign_password.txt
-          echo "${{ secrets.minisign_password }}" | $GITHUB_WORKSPACE/bin/minisign -s /tmp/minisign.key -Sm ${GENERIC_IMAGE_ISO}
           cd vyos-build
           sudo --preserve-env ./build-vyos-image \
             --architecture amd64 \
